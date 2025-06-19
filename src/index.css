@@ -38,25 +38,27 @@
     margin-bottom: var(--line-height);
     font-size: 1.3rem;
     text-align: left;
-    /* Add a bottom border for separation if you want: */
-    /* border-bottom: 1px solid var(--text-color); */
   }
   .nav-right {
     width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1ch;
+    justify-content: flex-start;
   }
   .nav-right a, #theme-toggle {
-    width: 100%;
-    text-align: left;
-    padding: 0.75em 0;
+    width: auto;
+    min-width: 0;
+    padding: 0.5em 0.5em 0.5em 0;
     margin: 0;
+    font-size: 1.1rem;
     border: none;
     border-radius: 0;
-    font-size: 1.1rem;
-    justify-content: flex-start;
+    text-align: left;
     background: none;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
