@@ -110,6 +110,7 @@ hr {
   border: none;
   color: var(--text-color);
 }
+
 hr:after {
   display: block;
   content: "";
@@ -536,7 +537,7 @@ label input {
 
 
 :root.dark-theme #blog-list a {
-  color: #893cc0;
+  color: #c299fc;
 }
 
 .blog-post {
@@ -582,6 +583,34 @@ label input {
   font-size: 0.95em;
   margin-left: 16px;
 }
+.project-separator {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin: 24px 0;
+  height: 0;
+}
+
+.info-rectangle {
+  background-color: var(--background-color);
+  border: var(--border-thickness) solid var(--text-color);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  color: var(--text-color);
+}
+.info-rectangle h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-bold);
+}
+.info-rectangle a {
+  display: inline-block;
+  margin-top: 1em;
+  color: var(--text-color);
+  text-decoration: underline;
+  font-weight: var(--font-weight-medium);
+}
 
 .post-date {
   color: var(--text-color-alt);
@@ -595,10 +624,4 @@ label input {
   font-style: italic;
   margin-top: 2rem;
   color: var(--text-color-alt);
-}
-/* Remove the media query for dark theme since we're handling it with JS now */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Remove these styles since we're handling dark theme with JS */
-  }
 }
