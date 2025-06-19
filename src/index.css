@@ -27,21 +27,33 @@
 }
 
 @media (max-width: 600px) {
-  .nav-right {
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--line-height) 1ch;
+    min-height: unset;
+  }
+  .nav-left {
     width: 100%;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .nav-right {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 0.5em;
     gap: 0.5ch;
+    margin-top: 0.5em;
   }
   .nav-right a,
   #theme-toggle {
+    flex-shrink: 1;
+    min-width: 0;
     font-size: 1.1rem;
-    padding: 0.5em 0.5em 0.5em 0;
-    margin: 0 !important;
+    padding: 0.3em 0.3em 0.3em 0;
+    margin: 0;
     background: none;
     border: none;
     border-radius: 0;
@@ -49,16 +61,11 @@
     display: inline-flex;
     align-items: center;
     height: auto;
-    min-width: 0;
-    width: auto;
     box-shadow: none;
     outline: none;
+    max-width: 100%;
   }
-  .nav-right a[aria-label="GitHub"],
-  .nav-right a[aria-label="LinkedIn"] {
-    margin: 0 !important;
-    padding: 0.5em 0.5em 0.5em 0;
-  }
+  .nav-right a i,
   #theme-toggle i {
     font-size: 1.1rem;
     margin: 0;
