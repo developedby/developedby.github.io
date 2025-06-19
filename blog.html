@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      if (
+        theme === 'dark' ||
+        (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark-theme');
+      }
+    } catch (e) {}
+  })();
+  </script>
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
