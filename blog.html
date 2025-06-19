@@ -11,6 +11,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="src/theme.js"></script>
 </head>
+
+<script>
+  fetch('blogs/blogs.json')
+    .then(response => response.json())
+    .then(posts => {
+      const list = document.getElementById('blog-list');
+      posts.forEach(post => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="blogs/${post.filename}">${post.name}</a> <span class="date">${post.date}</span>`;
+        list.appendChild(li);
+      });
+    })
+    .catch(err => {
+      document.getElementById('blog-list').innerHTML = '<li>Could not load blog posts.</li>';
+    });
+  </script>
 <body>
   <nav class="main-nav">
     <div class="nav-left">
@@ -25,6 +41,11 @@
       <button id="theme-toggle" aria-label="Toggle theme">☀︎</button>
     </div>
   </nav>
+  <h2 id="introduction">Blog Posts:</h2>
+  <div id="blog-list-container">
+    <ul id="blog-list"></ul>
+  </div>
+  
 <!--
 <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Contents</h2>
@@ -42,7 +63,7 @@ Drawings</a></li>
 </ul>
 </nav>
 -->
-<h2 id="introduction">Blog Posts:</h2>
+
 
   <script src="src/index.js"></script>
 </body>

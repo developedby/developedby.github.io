@@ -29,6 +29,7 @@ body.dark-theme {
   --background-color-alt: #111;
 }
 
+
 * {
   box-sizing: border-box;
   color: var(--text-color);
@@ -64,6 +65,7 @@ body.dark-theme {
   --background-color: #000;
   --background-color-alt: #111;
 }
+
 
 /*
 @media (prefers-color-scheme: dark) {
@@ -579,6 +581,43 @@ body.dark-theme {
   padding: 2rem;
   border: var(--border-thickness) solid var(--text-color);
   margin: 2rem 0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.blog-post pre, .blog-post code {
+  font-family: var(--font-family);
+}
+#blog-list-container {
+  background: var(--background-color);
+  border: var(--border-thickness) solid var(--text-color);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 24px;
+}
+#blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#blog-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#blog-list li:last-child {
+  border-bottom: none;
+}
+#blog-list a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+#blog-list .date {
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 16px;
 }
 
 .post-date {
@@ -587,6 +626,13 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
+.signature {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  margin-top: 2rem;
+  color: var(--text-color-alt);
+}
 /* Remove the media query for dark theme since we're handling it with JS now */
 @media (prefers-color-scheme: dark) {
   :root {
