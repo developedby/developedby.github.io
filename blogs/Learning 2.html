@@ -36,5 +36,84 @@
   <span class="signature">– nicolas</span>
 </div>
   <script src="../src/index.js"></script>
+  <footer class="site-footer" style="text-align: center; margin-top: 2em;">
+    <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; gap: 0.1em;">
+      <span class="footer-signature" style="display: block; margin-bottom: 0.1em;">
+        <i class="fas fa-feather-alt"></i> Crafted by 
+        <strong>
+          <a href="https://github.com/In-Veritas" target="_blank" style="color:inherit;text-decoration:none;">Gabriel Vérité</a>
+        </strong> and <strong>
+          <a href="https://github.com/developedby" target="_blank" style="color:inherit;text-decoration:none;">Nicolas Abril</a>
+        </strong>
+        <i class="fas fa-feather-alt"></i>
+      </span>
+      <span class="footer-github-quote" style="display: block; font-size: 0.95em;">
+        <a href="https://github.com/developedby/developedby.github.io" target="_blank" aria-label="GitHub Repository" style="color:inherit;text-decoration:none;">
+          This website runs on intern blood and tears. &mdash;
+          View Source <i class="fab fa-github"></i>
+        </a> 
+      </span>
+    </div>
+  </footer>
+  <div style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; font-size: 2em; color: #222; opacity: 0.7;">
+    <span style="position: relative; display: inline-block; cursor: default;">
+      <i class="fas fa-crow"></i>
+      <span id="crow-tooltip" style="visibility: hidden; width: 50px; color: #fff; text-align: center; border-radius: 6px; padding: 2px 6px; position: absolute; left: 120%; bottom: 50%; transform: translateY(50%); opacity: 0; transition: opacity 0.2s; font-size: 0.6em; white-space: nowrap;">
+        Caw!
+      </span>
+    </span>
+  </div>
+  <script>
+    const crowIcon = document.querySelector('.fa-crow').parentElement;
+    const tooltip = document.getElementById('crow-tooltip');
+    const facts = [
+      'Pure functions always return the same output for the same input.',
+      'Immutability helps prevent unexpected side effects.',
+      'Higher-order functions can take other functions as arguments or return them.',
+      'Referential transparency means expressions can be replaced with their values.',
+      'Lazy evaluation lets you compute values only when needed.',
+      'Pattern matching makes code more expressive and concise.',
+      'Recursion is often preferred over loops in functional languages.',
+      'Type inference lets the compiler deduce types automatically.',
+      'Algebraic data types allow for powerful and flexible data modeling.',
+      'Function composition lets you build complex logic from simple functions.',
+      'Currying transforms a function with multiple arguments into a sequence of functions.',
+      'Monads help manage side effects in a pure way.',
+      'Functors allow you to map over wrapped values.',
+      'Tail call optimization enables efficient recursion.',
+      'Lambda calculus is the theoretical foundation of functional programming.',
+      'Declarative style focuses on what to do, not how to do it.',
+      'Category theory inspires many functional programming concepts.',
+      'Persistent data structures never change after they are created.',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Try programming in Bend!',
+      'HOC HOC HOC!!!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!',
+      'Caw!'
+    ];
+    crowIcon.addEventListener('mouseenter', () => {
+      tooltip.textContent = facts[Math.floor(Math.random() * facts.length)];
+      tooltip.style.visibility = 'visible';
+      tooltip.style.opacity = '1';
+    });
+    crowIcon.addEventListener('mouseleave', () => {
+      tooltip.style.visibility = 'hidden';
+      tooltip.style.opacity = '0';
+    });
+  </script>
 </body>
 </html>
