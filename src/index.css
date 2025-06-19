@@ -30,7 +30,9 @@
   box-sizing: border-box;
   color: var(--text-color);
 }
-
+#theme-toggle, #theme-toggle i {
+  color: var(--text-color);
+}
 
 
 /*
