@@ -125,6 +125,18 @@
     'Caw!',
     'Caw!'
   ];
+  window.addEventListener('DOMContentLoaded', () => {
+  tooltip.textContent = 'Caw!';
+  tooltip.style.visibility = 'visible';
+  tooltip.style.opacity = '1';
+  // Start fade out after 1.3s, finish at 1.5s
+  setTimeout(() => {
+    tooltip.style.opacity = '0';
+  }, 1300);
+  setTimeout(() => {
+    tooltip.style.visibility = 'hidden';
+  }, 1500);
+});
   crowIcon.addEventListener('mouseenter', () => {
     tooltip.textContent = facts[Math.floor(Math.random() * facts.length)];
     tooltip.style.visibility = 'visible';
