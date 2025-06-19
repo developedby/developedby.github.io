@@ -32,6 +32,7 @@
     align-items: stretch;
     padding: var(--line-height) 1ch;
     min-height: unset;
+    position: relative; /* Needed for absolute positioning */
   }
   .nav-left {
     width: 100%;
@@ -49,7 +50,7 @@
     margin-top: 0.5em;
     gap: 1ch;
   }
-  .nav-right a, #theme-toggle {
+  .nav-right a {
     width: auto;
     min-width: 0;
     padding: 0.5em 0.5em 0.5em 0;
@@ -61,6 +62,20 @@
     background: none;
     display: inline-flex;
     align-items: center;
+  }
+  #theme-toggle {
+    position: absolute;
+    top: 0.7em;
+    right: 1em;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0.2em;
+    background: none;
+    border: none;
+    z-index: 2;
+  }
+  #theme-toggle i {
+    font-size: 1.3rem;
   }
 }
 
