@@ -4,15 +4,13 @@
   --font-family: "JetBrains Mono", monospace;
   --line-height: 1.20rem;
   --border-thickness: 2px;
-  --text-color: #000;
-  --text-color-alt: #666;
-  --background-color: #fff;
-  --background-color-alt: #eee;
-
+  --text-color: #b30000; /* red */
+  --text-color-alt: #a67c52; /* brownish for alt text */
+  --background-color: #f5f5dc; /* beige */
+  --background-color-alt: #f3e9d2; /* lighter beige */
   --font-weight-normal: 500;
   --font-weight-medium: 600;
   --font-weight-bold: 800;
-
   font-family: var(--font-family);
   font-optical-sizing: auto;
   font-weight: var(--font-weight-normal);
@@ -21,50 +19,18 @@
   font-size: 16px;
 }
 
-/* Dark theme styles */
-body.dark-theme {
-  --text-color: #fff;
-  --text-color-alt: #aaa;
-  --background-color: #000;
-  --background-color-alt: #111;
+:root.dark-theme {
+  --text-color: #c299fc;         /* purple */
+  --text-color-alt: #a259e6;     /* lighter purple for alt text */
+  --background-color: #000000;   /* black */
+  --background-color-alt: #1a0025; /* dark purple/black */
 }
-
 
 * {
   box-sizing: border-box;
   color: var(--text-color);
 }
 
-html, body {
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-html {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-}
-
-body {
-  position: relative;
-  width: 100%;
-  padding: var(--line-height) 2ch;
-  max-width: calc(min(80ch, round(down, 100%, 1ch)));
-  line-height: var(--line-height);
-  overflow-x: hidden;
-}
-
-/* Dark theme styles */
-body.dark-theme {
-  --text-color: #fff;
-  --text-color-alt: #aaa;
-  --background-color: #000;
-  --background-color-alt: #111;
-}
 
 
 /*
@@ -91,11 +57,9 @@ body.dark-theme {
 html {
   display: flex;
   width: 100%;
-  margin: 0;
-  padding: 0;
   flex-direction: column;
   align-items: center;
-  background: var(--background-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   min-height: 100vh;
 }
@@ -107,7 +71,7 @@ body {
   max-width: calc(min(80ch, round(down, 100%, 1ch)));
   line-height: var(--line-height);
   overflow-x: hidden;
-  background: var(--background-color);
+  background-color: var(--background-color);
 }
 
 @media screen and (max-width: 480px) {
@@ -568,12 +532,9 @@ label input {
   transform: scale(1.1);
 }
 
-/* Dark theme styles */
-body.dark-theme {
-  --text-color: #fff;
-  --text-color-alt: #aaa;
-  --background-color: #000;
-  --background-color-alt: #111;
+
+:root.dark-theme #blog-list a {
+  color: #893cc0;
 }
 
 .blog-post {
