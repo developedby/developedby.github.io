@@ -64,7 +64,27 @@
     align-items: center;
   }
   #theme-toggle {
-    display: none;
+    font-size: 1rem;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    background: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+  }
+  #theme-toggle i {
+    font-size: 1rem;
+  }
+  .nav-right {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.5em;
+    gap: 1ch;
   }
 }
 
