@@ -504,6 +504,10 @@ label input {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  
+}
+.nav-left a {
+  text-decoration: none;
 }
 
 .nav-right {
