@@ -35,13 +35,13 @@
     align-items: center;
     justify-content: flex-start;
     margin-top: 0.5em;
-    gap: 1ch;
+    gap: 0.5ch;
   }
   .nav-right a,
   #theme-toggle {
     font-size: 1.1rem;
     padding: 0.5em 0.5em 0.5em 0;
-    margin: 0;
+    margin: 0 !important;
     background: none;
     border: none;
     border-radius: 0;
@@ -51,13 +51,17 @@
     height: auto;
     min-width: 0;
     width: auto;
-    /* Remove any default button spacing */
     box-shadow: none;
     outline: none;
   }
+  .nav-right a[aria-label="GitHub"],
+  .nav-right a[aria-label="LinkedIn"] {
+    margin: 0 !important;
+    padding: 0.5em 0.5em 0.5em 0;
+  }
   #theme-toggle i {
     font-size: 1.1rem;
-    margin: 0; /* Remove any icon margin */
+    margin: 0;
     padding: 0;
   }
 }
