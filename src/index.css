@@ -630,31 +630,31 @@ label input {
 
 @media (max-width: 600px) {
   .main-nav {
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--line-height) 1ch;
-    min-height: unset;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: var(--line-height) 1ch !important;
+    min-height: unset !important;
   }
   .nav-left {
-    width: 100%;
-    font-size: 1.3rem;
-    text-align: left;
+    width: 100% !important;
+    font-size: 1.3rem !important;
+    text-align: left !important;
+    margin-bottom: 0.5em !important;
+    order: 0 !important;
   }
   .nav-right {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 0.5ch !important;
     width: 100% !important;
-    overflow-x: auto;
+    order: 1 !important;
   }
   .nav-right a,
   #theme-toggle {
-    flex: 0 1 auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
     font-size: 1.1rem !important;
     padding: 0.3em 0.3em 0.3em 0 !important;
     margin: 0 !important;
@@ -665,6 +665,8 @@ label input {
     display: inline-flex !important;
     align-items: center !important;
     height: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
     box-shadow: none !important;
     outline: none !important;
     white-space: nowrap !important;
@@ -675,4 +677,4 @@ label input {
     margin: 0 !important;
     padding: 0 !important;
   }
-} 
+}
