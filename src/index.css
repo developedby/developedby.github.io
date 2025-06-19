@@ -27,19 +27,6 @@
 }
 
 @media (max-width: 600px) {
-  .main-nav {
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--line-height) 1ch;
-    min-height: unset;
-    position: relative; /* Needed for absolute positioning */
-  }
-  .nav-left {
-    width: 100%;
-    margin-bottom: 0;
-    font-size: 1.3rem;
-    text-align: left;
-  }
   .nav-right {
     width: 100%;
     display: flex;
@@ -50,41 +37,28 @@
     margin-top: 0.5em;
     gap: 1ch;
   }
-  .nav-right a {
-    width: auto;
-    min-width: 0;
+  .nav-right a,
+  #theme-toggle {
+    font-size: 1.1rem;
     padding: 0.5em 0.5em 0.5em 0;
     margin: 0;
-    font-size: 1.1rem;
+    background: none;
     border: none;
     border-radius: 0;
     text-align: left;
-    background: none;
-    display: inline-flex;
-    align-items: center;
-  }
-  #theme-toggle {
-    font-size: 1rem;
-    padding: 0.2em 0.4em;
-    margin: 0;
-    background: none;
-    border: none;
     display: inline-flex;
     align-items: center;
     height: auto;
+    min-width: 0;
+    width: auto;
+    /* Remove any default button spacing */
+    box-shadow: none;
+    outline: none;
   }
   #theme-toggle i {
-    font-size: 1rem;
-  }
-  .nav-right {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 0.5em;
-    gap: 1ch;
+    font-size: 1.1rem;
+    margin: 0; /* Remove any icon margin */
+    padding: 0;
   }
 }
 
