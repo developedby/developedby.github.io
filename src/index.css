@@ -35,7 +35,7 @@
   }
   .nav-left {
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: left;
   }
   .nav-right {
@@ -51,7 +51,7 @@
   #theme-toggle {
     flex-shrink: 1;
     min-width: 0;
-    font-size: 1.1rem;
+    font-size: 0.5rem;
     padding: 0.3em 0.3em 0.3em 0;
     margin: 0;
     background: none;
@@ -67,7 +67,7 @@
   }
   .nav-right a i,
   #theme-toggle i {
-    font-size: 1.1rem;
+    font-size: 0.5rem;
     margin: 0;
     padding: 0;
   }
