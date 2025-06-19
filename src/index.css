@@ -29,7 +29,7 @@
 @media (max-width: 600px) {
   .main-nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     padding: var(--line-height) 1ch;
     min-height: unset;
   }
@@ -37,19 +37,26 @@
     width: 100%;
     margin-bottom: var(--line-height);
     font-size: 1.3rem;
+    text-align: left;
+    /* Add a bottom border for separation if you want: */
+    /* border-bottom: 1px solid var(--text-color); */
   }
   .nav-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5em;
     width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
   }
   .nav-right a, #theme-toggle {
-    font-size: 1.1rem;
     width: 100%;
-    padding: 0.5em 0;
+    text-align: left;
+    padding: 0.75em 0;
     margin: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
     justify-content: flex-start;
+    background: none;
   }
 }
 
