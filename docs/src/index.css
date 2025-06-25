@@ -687,3 +687,13 @@ label input {
 .nav-left a {
   text-decoration: none;
 }
+
+#crow-tooltip {
+  color: var(--text-color) !important;
+  background: var(--background-color) !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.6em;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
