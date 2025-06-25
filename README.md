@@ -1,6 +1,4 @@
-# Static Site Generator for developedby.github.io
-
-This project uses a custom Python script (`build.py`) to generate a static website from modular HTML content and templates. The site is output to the `docs/` directory.
+This repository uses a custom Python script (`build.py`) to generate a static website from modular HTML content and templates. The site is output to the `docs/` directory.
 
 ## What does `build.py` do?
 
