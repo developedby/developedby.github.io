@@ -1,15 +1,14 @@
 import os
 import re
 
-CONTENT_DIR = 'content'
-TEMPLATE_PATH = os.path.join(CONTENT_DIR, 'page_template.html')
+TEMPLATE_PATH = os.path.join('docs', 'src', 'page_template.html')
 BODY_FILES = {
-    'blog': os.path.join(CONTENT_DIR, 'blog_body.html'),
-    'index': os.path.join(CONTENT_DIR, 'index_body.html'),
-    'projects': os.path.join(CONTENT_DIR, 'projects_body.html'),
+    'blog': os.path.join('content', 'blog_body.html'),
+    'index': os.path.join('content', 'index_body.html'),
+    'projects': os.path.join('content', 'projects_body.html'),
 }
 OUTPUT_DIR = 'docs'
-BLOGS_SRC_DIR = os.path.join(CONTENT_DIR, 'blogs')  # Where to read blog sources
+BLOGS_SRC_DIR = os.path.join('content', 'blogs')  # Where to read blog sources
 BLOGS_OUT_DIR = os.path.join('docs', 'blogs')  # Where to write generated blog pages
 
 # Ensure output blog directory exists
@@ -19,17 +18,29 @@ os.makedirs(BLOGS_OUT_DIR, exist_ok=True)
 with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
     template = f.read()
 
+def clean_output(generated_main, generated_blogs):
+    # Remove .html files in OUTPUT_DIR not in generated_main
+    for fname in os.listdir(OUTPUT_DIR):
+        if fname.endswith('.html') and fname not in generated_main:
+            os.remove(os.path.join(OUTPUT_DIR, fname))
+    # Remove .html files in BLOGS_OUT_DIR not in generated_blogs
+    for fname in os.listdir(BLOGS_OUT_DIR):
+        if fname.endswith('.html') and fname not in generated_blogs:
+            os.remove(os.path.join(BLOGS_OUT_DIR, fname))
+
 def adjust_paths(html, is_blog=False):
     # For main pages, all links/assets should be relative to docs/
     # For blog pages, they should be relative to docs/blogs/
     if is_blog:
-        html = re.sub(r'href="\.\./src/', 'href="../../src/', html)
-        html = re.sub(r'src="\.\./src/', 'src="../../src/', html)
+        # Blog pages: asset paths should be ../src/...
+        html = re.sub(r'href="(\.\./)*src/', 'href="../src/', html)
+        html = re.sub(r'src="(\.\./)*src/', 'src="../src/', html)
         html = re.sub(r'href="(index|blog|projects)\.html"', r'href="../\1.html"', html)
         html = re.sub(r'href="blogs/', 'href="', html)  # blog links in blog posts are not expected
     else:
-        html = re.sub(r'href="\.\./src/', 'href="../src/', html)
-        html = re.sub(r'src="\.\./src/', 'src="../src/', html)
+        # Main pages: asset paths should be src/...
+        html = re.sub(r'href="(\.\./)*src/', 'href="src/', html)
+        html = re.sub(r'src="(\.\./)*src/', 'src="src/', html)
         html = re.sub(r'href="(index|blog|projects)\.html"', r'href="\1.html"', html)
         html = re.sub(r'href="blogs/', 'href="blogs/', html)
     return html
@@ -83,6 +94,7 @@ def generate_blog_list():
     return '\n'.join(items)
 
 def main_pages():
+    generated = []
     for page, body_path in BODY_FILES.items():
         with open(body_path, 'r', encoding='utf-8') as f:
             body_content = f.read()
@@ -96,10 +108,13 @@ def main_pages():
             )
         output_path = os.path.join(OUTPUT_DIR, f'{page}.html')
         write_wrapped_html(body_content, output_path, is_blog=False)
+        generated.append(f'{page}.html')
+    return generated
 
 def blog_pages():
-    # Adjust template for blog subdir (../src/ -> ../../src/)
-    blog_template = template.replace('../src/', '../../src/')
+    # Use the template as-is, asset paths will be fixed by adjust_paths
+    blog_template = template
+    generated = []
     for fname in os.listdir(BLOGS_SRC_DIR):
         if fname.endswith('.html'):
             blog_path = os.path.join(BLOGS_SRC_DIR, fname)
@@ -107,10 +122,13 @@ def blog_pages():
                 blog_content = f.read()
             out_path = os.path.join(BLOGS_OUT_DIR, fname)
             write_wrapped_html(blog_content, out_path, template_str=blog_template, is_blog=True)
+            generated.append(fname)
+    return generated
 
 def main():
-    main_pages()
-    blog_pages()
+    generated_main = main_pages()
+    generated_blogs = blog_pages()
+    clean_output(generated_main, generated_blogs)
 
 if __name__ == '__main__':
     main()
