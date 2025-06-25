@@ -1,3 +1,5 @@
+# Static Site Generator for developedby.github.io
+
 This project uses a custom Python script (`build.py`) to generate a static website from modular HTML content and templates. The site is output to the `docs/` directory.
 
 ## What does `build.py` do?
@@ -227,4 +229,10 @@ docs/
     index.css
     nav.css
     ...
-``` 
+```
+
+## Customization
+
+- To add a new blog post, create a new HTML file in `content/blogs/`.
+- To change the layout, edit `docs/src/page_template.html`.
+- To update styles, edit the CSS files in `docs/src/`. 
