@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      if (
+        theme === 'dark' ||
+        (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark-theme');
+      }
+    } catch (e) {}
+  })();
+  </script>
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Oskar Wickström" />
   <title>nicolas.</title>
-  <link rel="stylesheet" href="../src/reset.css" />
-  <link rel="stylesheet" href="../src/index.css" />
+  <link rel="stylesheet" href="../../src/reset.css" />
+  <link rel="stylesheet" href="../../src/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script src="../src/theme.js"></script>
+  <script src="../../src/theme.js"></script>
 </head>
 <body>
   <nav class="main-nav">
     <div class="nav-left">
-      <a href="index.html">nicolas</a>
+      <a href="../index.html">nicolas</a>
     </div>
     <div class="nav-right">
       <a href="../index.html">home</a>
@@ -27,16 +40,17 @@
       </button>
     </div>
   </nav>
-<div class="blog-post">
-  <div class="post-date">March 19, 2024</div>
-  <h2 id="blog-post-title">Learning</h2>
+<div class="post-date">April 19, 2022</div>
+  <h2 id="blog-post-title">Praising my intern once again</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lacinia tellus, id cursus eros tempor sit amet. Duis est magna, imperdiet at vehicula in, elementum non lacus. Suspendisse quis congue sapien, vel aliquet dui. Aenean nisl augue, tristique ac nulla quis, pellentesque tristique felis. Ut sollicitudin, justo a iaculis sodales, ipsum orci mollis ipsum, eget aliquet ante elit at massa. Pellentesque rhoncus bibendum elit, et convallis elit efficitur in. Suspendisse placerat vehicula commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices velit id rutrum pellentesque. Sed efficitur auctor leo, vel accumsan elit finibus convallis.</p>
   <p>Etiam finibus, nisi at vehicula suscipit, est urna fermentum lacus, porta egestas lacus tortor at mi. Nullam nec nibh euismod, sodales sapien vitae, lobortis metus. Nulla sed turpis quis libero semper porttitor a ut neque. Donec congue blandit pretium. In ac dui eros. Curabitur leo nulla, convallis at gravida id, viverra vel sem. Maecenas at ligula dictum, mollis ipsum laoreet, suscipit felis. Morbi tempus leo eget felis molestie egestas. Curabitur ultrices convallis orci in pellentesque. Integer auctor sodales ligula, id volutpat lacus blandit ut. Cras ultrices vulputate hendrerit. Aenean pretium varius viverra. Cras sed nulla vel arcu facilisis tristique. Duis nec enim vitae mi scelerisque mollis. Sed ultrices, massa et elementum molestie, eros elit mollis sem, eget porta nisl lorem eget nibh.</p>
   <p>Sed in felis orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec commodo convallis erat sollicitudin ornare. Sed nisi libero, blandit facilisis commodo a, vehicula sed ligula. Nunc viverra justo nibh, at egestas odio ultricies at. Mauris condimentum nec mi eget rutrum. Integer placerat lorem fringilla risus porttitor porta. Phasellus scelerisque, neque id molestie accumsan, libero eros maximus nunc, at lobortis nibh arcu efficitur arcu. Pellentesque consectetur ligula quis lobortis bibendum. Praesent volutpat ultrices sapien, quis sagittis leo. Vestibulum ut rhoncus ligula, eu condimentum quam. Morbi orci neque, efficitur eget magna nec, lobortis sollicitudin augue.</p>
   <span class="signature">– nicolas</span>
 </div>
-  <script src="../src/index.js"></script>
-  <footer class="site-footer" style="text-align: center; margin-top: 2em;">
+
+
+<script src="src/index.js"></script>
+<footer class="site-footer" style="text-align: center; margin-top: 2em;">
   <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; gap: 0.1em;">
     <span class="footer-signature" style="display: block; margin-bottom: 0.1em;">
       <i class="fas fa-feather-alt"></i> Crafted by 
@@ -105,6 +119,18 @@
     'Caw!',
     'Caw!'
   ];
+  window.addEventListener('DOMContentLoaded', () => {
+  tooltip.textContent = 'Caw!';
+  tooltip.style.visibility = 'visible';
+  tooltip.style.opacity = '1';
+  // Start fade out after 1.3s, finish at 1.5s
+  setTimeout(() => {
+    tooltip.style.opacity = '0';
+  }, 1300);
+  setTimeout(() => {
+    tooltip.style.visibility = 'hidden';
+  }, 1500);
+});
   crowIcon.addEventListener('mouseenter', () => {
     tooltip.textContent = facts[Math.floor(Math.random() * facts.length)];
     tooltip.style.visibility = 'visible';
@@ -115,5 +141,6 @@
     tooltip.style.opacity = '0';
   });
 </script>
+</body>
 </body>
 </html>
