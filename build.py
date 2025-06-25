@@ -8,9 +8,9 @@ BODY_FILES = {
     'index': os.path.join(CONTENT_DIR, 'index_body.html'),
     'projects': os.path.join(CONTENT_DIR, 'projects_body.html'),
 }
-OUTPUT_DIR = 'build'
+OUTPUT_DIR = 'docs'
 BLOGS_SRC_DIR = os.path.join(CONTENT_DIR, 'blogs')  # Where to read blog sources
-BLOGS_OUT_DIR = os.path.join('build', 'blogs')  # Where to write generated blog pages
+BLOGS_OUT_DIR = os.path.join('docs', 'blogs')  # Where to write generated blog pages
 
 # Ensure output blog directory exists
 os.makedirs(BLOGS_OUT_DIR, exist_ok=True)
@@ -20,8 +20,8 @@ with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
     template = f.read()
 
 def adjust_paths(html, is_blog=False):
-    # For main pages, all links/assets should be relative to build/
-    # For blog pages, they should be relative to build/blogs/
+    # For main pages, all links/assets should be relative to docs/
+    # For blog pages, they should be relative to docs/blogs/
     if is_blog:
         html = re.sub(r'href="\.\./src/', 'href="../../src/', html)
         html = re.sub(r'src="\.\./src/', 'src="../../src/', html)
