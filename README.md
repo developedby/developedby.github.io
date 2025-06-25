@@ -1,5 +1,3 @@
-# Static Site Generator for developedby.github.io
-
 This project uses a custom Python script (`build.py`) to generate a static website from modular HTML content and templates. The site is output to the `docs/` directory.
 
 ## What does `build.py` do?
@@ -196,6 +194,10 @@ Below is a complete list of the main CSS classes and IDs used in this project, w
 - To add a new blog post, create a new HTML file in `content/blogs/`.
 - To change the layout, edit `docs/src/page_template.html`.
 - To update styles, edit the CSS files in `docs/src/`.
+- **To create a new main page (_body.html):**
+  - Create a new HTML file in the `content/` directory, following the naming pattern (e.g., `about_body.html`).
+  - Structure your content using the CSS classes and IDs described above (such as `info-rectangle`, `main-nav`, `blog-post`, etc.) to ensure your new page matches the site's visual style.
+  - You can reference and reuse the classes from `docs/src/index.css` for consistent appearance. Once your new body file is ready, you can update `build.py` to include it in the build process if needed.
 
 ## Usage
 
@@ -229,10 +231,4 @@ docs/
     index.css
     nav.css
     ...
-```
-
-## Customization
-
-- To add a new blog post, create a new HTML file in `content/blogs/`.
-- To change the layout, edit `docs/src/page_template.html`.
-- To update styles, edit the CSS files in `docs/src/`. 
+``` 
