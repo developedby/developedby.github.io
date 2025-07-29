@@ -59,8 +59,8 @@
 }
 
 p a, p s {
-  margin-top: 0;
-  display: inline;
+  margin-top: 0 !important;
+  display: inline !important;
 }
 
 html {
