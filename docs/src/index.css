@@ -61,6 +61,8 @@
 p a, p s {
   margin-top: 0;
   display: inline;
+  text-decoration-thickness: 1px;
+  line-height: inherit;
 }
 
 html {
