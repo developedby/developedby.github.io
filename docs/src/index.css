@@ -613,6 +613,9 @@ label input {
   padding: 32px 24px;
   color: var(--text-color);
 }
+.info-rectangle p {
+  text-align: justify;
+}
 .info-rectangle h3 {
   margin-top: 0;
   font-size: 1.2rem;
