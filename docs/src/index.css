@@ -59,17 +59,11 @@ p + *, h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + *, div + *, blockquote + *, 
 }
 
 .info-rectangle p a {
-  text-decoration: underline;
-  border: none;
-  display: inline;
-  margin-top: 0;
+  text-decoration: underline !important;
 }
 
 .info-rectangle p s {
-  text-decoration: line-through;
-  border: none;
-  display: inline;
-  margin-top: 0;
+  text-decoration: line-through !important;
 }
 
 html {
