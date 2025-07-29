@@ -65,6 +65,10 @@ p a, p s {
   line-height: inherit;
 }
 
+p a + *, p s + * {
+  margin-top: 0;
+}
+
 html {
   display: flex;
   width: 100%;
