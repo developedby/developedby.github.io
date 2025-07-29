@@ -58,6 +58,16 @@ p + *, h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + *, div + *, blockquote + *, 
   color: var(--text-color);
 }
 
+p a {
+  text-decoration: underline;
+  border: none;
+}
+
+p s {
+  text-decoration: line-through;
+  border: none;
+}
+
 html {
   display: flex;
   width: 100%;
