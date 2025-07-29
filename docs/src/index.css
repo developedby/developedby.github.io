@@ -58,8 +58,9 @@
   color: var(--text-color);
 }
 
-p * {
+p a, p s {
   margin-top: 0;
+  display: inline;
 }
 
 html {
