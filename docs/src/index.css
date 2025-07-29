@@ -53,21 +53,9 @@
 }
 
 
-* + * {
+p + *, h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + *, div + *, blockquote + *, ul + *, ol + *, table + *, pre + *, figure + *, nav + *, header + *, footer + *, section + *, article + * {
   margin-top: var(--line-height);
   color: var(--text-color);
-}
-
-p a, p s {
-  margin-top: 0;
-  display: inline;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  line-height: inherit;
-}
-
-p a + *, p s + * {
-  margin-top: 0;
 }
 
 html {
