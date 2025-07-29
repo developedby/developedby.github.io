@@ -630,6 +630,7 @@ label input {
   color: var(--text-color);
   text-decoration: underline;
   font-weight: var(--font-weight-medium);
+  border: none;
 }
 
 .post-date {
