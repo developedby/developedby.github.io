@@ -59,8 +59,8 @@
 }
 
 p a, p s {
-  margin-top: 0 !important;
-  display: inline !important;
+  margin-top: 0;
+  display: inline;
 }
 
 html {
@@ -616,8 +616,8 @@ label input {
   font-weight: var(--font-weight-bold);
 }
 .info-rectangle a {
-  display: inline-block;
-  margin-top: 1em;
+  display: inline;
+  margin-top: 0;
   color: var(--text-color);
   text-decoration: underline;
   font-weight: var(--font-weight-medium);
